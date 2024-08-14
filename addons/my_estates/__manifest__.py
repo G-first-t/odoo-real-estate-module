@@ -5,8 +5,8 @@
     "summary":"my real estate management",
     "website":"www.google.com",
     "data":[
-        "security/ir.model.access.csv"
-       "data/"
+        "security/ir.model.access.csv",
+       "data/data.xml"
     ],
     "depends":[
        "base"
