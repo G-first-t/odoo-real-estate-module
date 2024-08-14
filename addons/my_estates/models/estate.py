@@ -22,6 +22,9 @@ class MyEstate(models.Model):
                                                    ("south","south"),
                                                    ("east","east"),
                                                    ("west","west")])
+    property_type_id=fields.Many2one('property.type')
+    buyer=fields.Many2one('res.partner',string="Buyer")
+    seller=fields.Many2one('res.users',string="Salesman")
 
 
 

@@ -12,6 +12,7 @@
         </tree>
      </field>
   </record>
+
   <record id="my_estate_view_search" model="ir.ui.view">
      <field name="name">estate</field>
      <field name="model">my_estate</field>
@@ -24,6 +25,32 @@
         </search>
      </field>
   </record>
+
+ <record id="property_type_tree_view" model="ir.ui.view">
+     <field name="name"></field>
+     <field name="model">property.type</field>
+     <field name="arch" type="xml">
+        <tree string="Property Types">
+          <field name="name"/>
+        </tree> 
+     </field>
+  </record>
+
+  <record id="property_type_form_view" model="ir.ui.view">
+     <field name="name">Propety Types</field>
+     <field name="model">property.type</field>
+     <field name="arch" type="xml">
+        <form>
+           <sheet>
+              <group>
+                 <field name="name"/>
+              </group>
+           </sheet>
+        </form>
+     </field>
+  </record>
+
+
   <record id="my_estate_view_form" model="ir.ui.view">
      <field name="name">estate</field>
      <field name="model">my_estate</field>
@@ -59,11 +86,20 @@
                       <field name="garden_orientation"/>
                     </group>
                  </page>
+                  <page string="Other info">
+                      <group>
+                          <field name="seller"/>
+                          <field name="buyer"/>
+                      </group>
+                  </page>
              </notebook>
            </sheet>
         </form>
      </field>
   </record>
+
+
+
 
   <record id="my_estate_action" model="ir.actions.act_window">
      <field name="name">estate</field>
@@ -71,7 +107,22 @@
      <field name="view_mode">tree,form</field>
   </record>
 
+
+<record id="property_action" model="ir.actions.act_window">
+     <field name="name">Propety Types</field>
+     <field name="res_model">property.type</field>
+     <field name="view_mode">tree,form</field>
+  </record>
+
+
   <menuitem id="menu_estate" name="Estate management">
-         <menuitem id="menu_estate_two" name="advertisement " action="my_estate_action"/> 
+         <menuitem id="menu_estate_two" 
+                   name="advertisement " 
+                   action="my_estate_action"/> 
+         <menuitem id="menu_estate_three" name="Setting">
+             <menuitem id="property_types" 
+                      name="Property Types" 
+                      action="property_action"/>
+         </menuitem>
   </menuitem>
 </odoo>
