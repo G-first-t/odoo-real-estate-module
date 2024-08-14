@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<record id="my_estate_view" model="ir.ui.view">
+     <field name="name">estate</field>
+     <field name="model">my_estate</field>
+     <field name="arch" type="xml">
+        <tree string="Tree View">
+           <field name="name"/>
+           <field name="date_availability"/>
+           <field name="expected_price"/>
+           <field name="selling_price"/>
+        </tree>
+     </field>
+  </record>
+  <record id="my_estate_view_search" model="ir.ui.view">
+     <field name="name">estate</field>
+     <field name="model">my_estate</field>
+     <field name="arch" type="xml">
+        <search string="Search">
+           <field name="name"/>
+           <field name="date_availability"/>
+           <field name="expected_price"/>
+           <field name="selling_price"/>
+        </search>
+     </field>
+  </record>
+  <record id="my_estate_view_form" model="ir.ui.view">
+     <field name="name">estate</field>
+     <field name="model">my_estate</field>
+     <field name="arch" type="xml">
+        <form string="Tree View">
+           <sheet>
+            <group>
+                <div>
+                  <field name="name"/>
+                </div>
+             <group>
+                 <group>
+                     <field name="postcode"/>
+                     <field name="date_availability"/>
+                 </group>
+                 <group>
+                     <field name="expected_price"/>
+                     <field name="selling_price"/>
+                 </group>
+             </group>
+             
+        </group>
+        <notebook>
+                 <page string="Description">
+                    <group>
+                      <field name="description"/>
+                      <field name="bedrooms"/>
+                      <field name="living_area"/>
+                      <field name="facades"/>
+                      <field name="garage"/>
+                      <field name="garden"/>
+                      <field name="garden_area"/>
+                      <field name="garden_orientation"/>
+                    </group>
+                 </page>
+             </notebook>
+           </sheet>
+        </form>
+     </field>
+  </record>
+
   <record id="my_estate_action" model="ir.actions.act_window">
      <field name="name">estate</field>
      <field name="res_model">my_estate</field>
      <field name="view_mode">tree,form</field>
   </record>
 
-  <menuitem id="menu_estate" name="one">
-     <menuitem id="menu_estate_two" name="two">
-         <menuitem id="menu_estate_three" name="three " action="my_estate_action"/>
-     </menuitem>
+  <menuitem id="menu_estate" name="Estate management">
+         <menuitem id="menu_estate_two" name="advertisement " action="my_estate_action"/> 
   </menuitem>
 </odoo>
