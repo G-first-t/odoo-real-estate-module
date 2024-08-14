@@ -73,6 +73,34 @@
      </field>
   </record>
 
+  <record id="property_offer_tree_view" model="ir.ui.view">
+     <field name="name">Property Offer</field>
+     <field name="model">property.offer</field>
+     <field name="arch" type="xml">
+        <tree string="Property Types">
+          <field name="price"/>
+          <field name="partner_id"/>
+          <field name="status"/>
+        </tree> 
+     </field>
+  </record>
+
+  <record id="property_offer_form_view" model="ir.ui.view">
+     <field name="name">Property Offer</field>
+     <field name="model">property.offer</field>
+     <field name="arch" type="xml">
+        <form string="Property Offer">
+          <sheet>
+             <group>
+                <field name="price"/>
+                <field name="partner_id"/>
+                <field name="status"/>
+             </group>
+          </sheet>
+        </form> 
+     </field>
+  </record>
+
   <record id="my_estate_view_form" model="ir.ui.view">
      <field name="name">estate</field>
      <field name="model">my_estate</field>
@@ -111,12 +139,18 @@
                       <field name="garden_orientation"/>
                     </group>
                  </page>
+                 <page string="offers">    
+                    
+                        <field name="offer_ids"/>
+                  
+                 </page>
                   <page string="Other info">
                       <group>
                           <field name="seller"/>
                           <field name="buyer"/>
                       </group>
                   </page>
+
              </notebook>
            </sheet>
         </form>
