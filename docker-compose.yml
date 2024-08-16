@@ -2,6 +2,7 @@
 services:
   web:
     image: odoo:17.0
+    command: ["sh", "-c", "pip install pyjwt | grep -v 'already satisfied'; odoo --db_host=db --db_port=5432 --db_user=odoo --db_password=odoo"]
     depends_on:
       - db
     ports:
