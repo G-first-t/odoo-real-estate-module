@@ -27,7 +27,7 @@
   </record>
 
  <record id="property_type_tree_view" model="ir.ui.view">
-     <field name="name"></field>
+     <field name="name">property</field>
      <field name="model">property.type</field>
      <field name="arch" type="xml">
         <tree string="Property Types">
@@ -167,14 +167,14 @@
   </record>
 
   <record id="property_tag_action" model="ir.actions.act_window">
-     <field name="name">Propety Tags</field>
+     <field name="name">Property Tags</field>
      <field name="res_model">property.tag</field>
      <field name="view_mode">tree,form</field>
   </record>
 
 
 <record id="property_type_action" model="ir.actions.act_window">
-     <field name="name">Propety Types</field>
+     <field name="name">Property Types</field>
      <field name="res_model">property.type</field>
      <field name="view_mode">tree,form</field>
   </record>
